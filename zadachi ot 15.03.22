@@ -1,5 +1,4 @@
 import math
-
 '''
 #1
 cnt = 0
@@ -54,55 +53,53 @@ print(maximum, cnt)
 
 #4
 cnt = 0
-maximum = 0
+maximum = []
 for i in range(2079, 43168):
-    if i % 7 == 0:
-        if str(i).count('0') > 0 and str(i).count('2') > 0 and str(i).count('5'):
+    if i % 7 == 0 and str(i).count('0') > 0 and str(i).count('2') > 0 and str(i).count('5') > 0:
             cnt += 1
-            maximum = i
-print(maximum, cnt)
-#42805 233
+            maximum += [i]
+print(min(maximum), cnt)
+#2205 233
 
 #5
 cnt = 0
 maximum = 0
 for i in range(1388, 63253):
-    if i % 12 != 0 and str(i).count('7') > 0 and str(i).count('4') > 0:
+    if i % 12 != 0 and (str(i).count('7') > 0 or str(i).count('4') > 0):
         cnt += 1
         maximum = i
 print(maximum, cnt)
-#63247 7858
+#63247 37071
+
 
 #6
 cnt = 0
-maximum = 0
-sum= 0
+
+list = []
 for i in range(2894, 174883):
     if int(str(i)[-1]) == 8:
         b = i
-        for b in range(len(str(i))):
-            while(b):
-                sum += b % 10
-                b //= 10
+        sum = 0
+        for k in str(i):
+            sum += int(k)
         if sum > 22:
             cnt += 1
-            maximum = i
-print(maximum, cnt)
-#174878 17196
+            list += [i]
+print(cnt, list[13])
+#12524 3668
 
 #7
 
 cnt = 0
-maximum = 0
+maximum = []
 for i in range(1031, 125889):
     if int(str(i)[-1]) != 5 and i ** 0.5 == math.floor(math.sqrt(i)) + 0.0:
         cnt += 1
         if int(str(i)[-2:]) == 36:
-            maximum = i
-            print('min', maximum)
-print(cnt)
+            maximum += [i]
+print(min(maximum), cnt)
 # 1936 290
-
+'''
 #8
 cnt = 0
 maximum = 0
@@ -112,20 +109,20 @@ for i in range(2848, 109500):
         b = i
         for b in range(len(str(i))):
             sum = 0
-            
+
             if sum > 5 and sum % 3 == 0:
                 cnt += 1
                 if str(i)[0] == 8:
                     maximum = i
 print(cnt, maximum)
-
+'''
 # 9
 cnt = 0
 maximum = 0
 sum = 0
 for i in range(1005, 147871):
     if str(i).count('1') == 0:
-        
+
 # 10
 cnt = 0
 maximum = 0
