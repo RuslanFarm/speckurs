@@ -1,22 +1,22 @@
-
+import math
 '''
-#1
+# 1
 cnt = 0
 maximum = 0
 for i in range(8800, 55536):
     if len(str(i)) == 4:
         if (int(str(i)[0]) * int(str(i)[1]) * int(str(i)[2]) * int(str(i)[3]) > 35) \
-        and (int(str(i)[0]) == 7 or int(str(i)[1]) == 7 or int(str(i)[2]) == 7 or int(str(i)[3]) == 7):
-                cnt += 1
-                maximum = i
+                and (int(str(i)[0]) == 7 or int(str(i)[1]) == 7 or int(str(i)[2]) == 7 or int(str(i)[3]) == 7):
+            cnt += 1
+            maximum = i
     elif len(str(i)) == 5:
-        if (int(str(i)[0]) * int(str(i)[1]) * int(str(i)[2]) * int(str(i)[3]) * int(str(i)[4]) == 7 > 35) \
-        and (int(str(i)[0]) == 7 or int(str(i)[1]) == 7 or int(str(i)[2]) == 7 or int(str(i)[3]) == 7 or \
-        int(str(i)[4]) == 7):
-                cnt += 1
-                maximum = i
+        if (int(str(i)[0]) * int(str(i)[1]) * int(str(i)[2]) * int(str(i)[3]) * int(str(i)[4]) > 35) \
+                and (int(str(i)[0]) == 7 or int(str(i)[1]) == 7 or int(str(i)[2]) == 7 or int(str(i)[3]) == 7 \
+                     or int(str(i)[4]) == 7):
+            cnt += 1
+            maximum = i
 print(maximum, cnt)
-#9997 251
+# 55527 10958
 
 # 2
 cnt = 0
@@ -31,13 +31,13 @@ for i in range(333666, 667000):
         cnt += 1
         maximum = i
 print(maximum, cnt)
-#666774 ; 1380
+# 666774 ; 1380
 
-#3
+# 3
 cnt = 0
 maximum = 0
 seven = ''
-for i in range(100_001, 900010 ):
+for i in range(100_001, 900010):
     if i % 11 == 0 and i % 55 != 0:
         b = i
         seven = ''
@@ -49,19 +49,19 @@ for i in range(100_001, 900010 ):
             cnt += 1
             maximum = i
 print(maximum, cnt)
-#899954 5195
+# 899954 5195
 
-#4
+# 4
 cnt = 0
 maximum = []
 for i in range(2079, 43168):
     if i % 7 == 0 and str(i).count('0') > 0 and str(i).count('2') > 0 and str(i).count('5') > 0:
-            cnt += 1
-            maximum += [i]
+        cnt += 1
+        maximum += [i]
 print(min(maximum), cnt)
-#2205 233
+# 2205 233
 
-#5
+# 5
 cnt = 0
 maximum = 0
 for i in range(1388, 63253):
@@ -69,26 +69,23 @@ for i in range(1388, 63253):
         cnt += 1
         maximum = i
 print(maximum, cnt)
-#63247 37071
+# 63247 37071
 
 
-#6
+# 6
 cnt = 0
-
 list = []
 for i in range(2894, 174883):
-    if int(str(i)[-1]) == 8:
-        b = i
-        sum = 0
-        for k in str(i):
-            sum += int(k)
-        if sum > 22:
+    sum = 0
+    for k in str(i):
+        sum += int(k)
+    if int(str(i)[-1]) == 8 and sum > 22:
             cnt += 1
             list += [i]
-print(cnt, list[13])
-#12524 3668
+print(cnt, list[12])
+# 12524 3598
 
-#7
+# 7
 
 cnt = 0
 maximum = []
@@ -100,7 +97,7 @@ for i in range(1031, 125889):
 print(min(maximum), cnt)
 # 1936 290
 '''
-#8
+# 8
 cnt = 0
 maximum = 0
 sum = 0
